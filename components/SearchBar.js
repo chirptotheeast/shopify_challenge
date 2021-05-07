@@ -11,6 +11,9 @@ export default class SearchBar extends Component {
     render() {
         return (
             <div>
+                <form onSubmit={console.log('hi')}>
+                <input type="text"></input>
+                </form>
                 
             </div>
         )
