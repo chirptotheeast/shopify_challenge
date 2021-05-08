@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
+import axios from "axios";
+// import React, { useState } from "react";
+// import { useDispatch } from "react-redux";
 
-export default class SearchBar extends Component {
+export default function SearchBar(){
 
-    componentDidMount(){
-        fetch("http://www.omdbapi.com/?i=tt3896198&apikey=bd37504c")
-          .then((res) => res.json())
-          .then((data) => console.log(data));
-    }
+    //  const dispatch = useDispatch()
 
-    render() {
+    axios
+        .get("http://www.omdbapi.com/?i=tt3896198&apikey=bd37504c")
+          .then((res) =>{
+            console.log(res)
+          })
+
+
+
         return (
             <div>
                 <form onSubmit={console.log('hi')}>
@@ -17,5 +23,4 @@ export default class SearchBar extends Component {
                 
             </div>
         )
-    }
 }
